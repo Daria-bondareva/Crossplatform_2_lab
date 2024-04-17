@@ -13,5 +13,20 @@
             <span th:text="${language}"></span>
         </li>
     </ul> </div>
+<div th:text="${username}" th:id="|div-${username}|">Noname User</div>
+<div th:text="${user.getName()}"></div>
+<div th:text="${user.name}"></div>
+<div th:text="${capitalOfCountry['Germany']}"></div>
+<div th:text="${user_1[0].name}"></div>
+<div th:text="#{dashboard.Bondareva}"></div>
+<ul>
+    <li th:each="user_2:${User}" th:object="${user_2}">
+        <div th:if="${user_2.surname.length()>= 9}">[[*{surname}]]</div>
+        <div th:unless="${user_2.surname.length()>= 9}">[[*{name}]]</div>
+    </li>
+</ul>
+<a th:href="@{https://www.pinterest.com/jamesonraye/monkey-smiling/}">Посилання на селфі</a>
+<p>[[${user_1[2].name}]]</p>
+<div th:text="#{__${user_3}__}"></div>
 </body>
 </html>
